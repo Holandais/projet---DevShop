@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DataDash — Météo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand">DataDash</div>
+      <div class="search">
+        <input id="city-input" placeholder="Entrez une ville (ex : Brazzaville)" aria-label="Recherche ville" />
+        <button id="search-btn" class="btn">Rechercher</button>
+      </div>
+      <div class="status-indicators">
+        <div id="loader" class="loader">Chargement…</div>
+        <div id="error" class="error" role="alert" hidden></div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="widget current" id="current-weather">
+        <h2>Météo actuelle</h2>
+        <div class="current-content">
+          <div class="icon"><img id="weather-icon" alt="icône météo" /></div>
+          <div class="values">
+            <div class="temp" id="temp">--°C</div>
+            <div class="desc" id="desc">—</div>
+            <div class="meta">Humidité: <span id="humidity">--%</span></div>
+            <div class="meta">Dernière mise à jour: <span id="last-update">--:--</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="widget forecast" id="forecast">
+        <h2>Prévisions 5 jours</h2>
+        <div id="forecast-list" class="forecast-list"></div>
+      </section>
+
+      <aside class="widget history" id="history">
+        <h2>Dernières recherches</h2>
+        <div id="history-tags" class="tags"></div>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

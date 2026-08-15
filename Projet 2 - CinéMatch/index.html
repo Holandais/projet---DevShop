@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CineMatch — Catalogue de films</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav-left">
+        <h1 class="logo">CineMatch</h1>
+      </div>
+      <div class="nav-center">
+        <input id="search" placeholder="Rechercher un film..." aria-label="Recherche de films" />
+      </div>
+      <div class="nav-right">
+        <button id="show-favs" class="btn ghost">Favoris (<span id="fav-count">0</span>)</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="status" class="status">
+        <div id="loader" class="loader">Chargement des films…</div>
+        <div id="error" class="error" role="alert" hidden></div>
+      </section>
+
+      <section class="content">
+        <section id="movies" class="movies-grid" aria-live="polite"></section>
+
+        <aside id="favorites" class="favorites" aria-live="polite">
+          <h2>Films favoris</h2>
+          <div id="fav-list" class="fav-list"></div>
+        </aside>
+      </section>
+    </main>
+
+    <div id="modal" class="modal" hidden aria-hidden="true">
+      <div class="modal-content">
+        <button id="modal-close" class="modal-close">✕</button>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

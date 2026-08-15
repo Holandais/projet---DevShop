@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DevShop — Vitrine e‑commerce</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav-left">
+        <h1 class="logo">DevShop</h1>
+        <div class="filters">
+          <button class="filter-btn active" data-category="all">Tous</button>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <input id="search" class="search" type="search" placeholder="Rechercher un produit..." />
+        <select id="sort" class="sort">
+          <option value="relevance">Trier : Pertinence</option>
+          <option value="price-asc">Prix ↑</option>
+          <option value="price-desc">Prix ↓</option>
+        </select>
+        <button id="cart-toggle" class="cart-btn" aria-label="Ouvrir le panier">
+          🧾 <span id="cart-count" class="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="status" class="status">
+        <div id="loader" class="loader">Chargement des produits…</div>
+        <div id="error" class="error" role="alert" hidden></div>
+      </section>
+
+      <section id="products" class="products-grid" aria-live="polite"></section>
+    </main>
+
+    <aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+      <div class="cart-header">
+        <h2>Panier</h2>
+        <button id="close-cart">✕</button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-footer">
+      <div class="cart-total">Total: <span id="cart-total">0 FCFA</span></div>
+        <button id="checkout" class="primary">Commander</button>
+      </div>
+    </aside>
+
+    <div id="overlay" class="overlay" hidden></div>
+
+    <div id="product-modal" class="modal" aria-hidden="true" hidden>
+      <div class="modal-content">
+        <button id="modal-close" class="modal-close">✕</button>
+        <div id="modal-body" class="modal-body"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
